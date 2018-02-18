@@ -12,6 +12,7 @@ import keyring
 from ustawienia import slownik
 from ustawienia import konta
 
+
 def pobierz_haslo(service, username):
    if keyring:
       password = keyring.get_password(service, username)
@@ -23,6 +24,7 @@ def pobierz_haslo(service, username):
    if password and keyring:
       keyring.set_password(service, username, password)
    return password
+
 
 def haslo(service, username, password):
    if password:

@@ -149,7 +149,7 @@ class ScraperLekarzy:
 
        if ustawieniaMejla.get('smtp_tls'):
           smtp_pass = hasla.haslo(smtp, od, ustawieniaMejla.get('smtp_password'))
-          serwer=smtplib.SMTP(smtp, 587)
+          serwer=smtplib.SMTP(smtp, ustawieniaMejla.get('smtp_port', 587))
           serwer.starttls()
           serwer.login(od, smtp_pass)
        else:
